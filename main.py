@@ -86,13 +86,13 @@ LAUNCH = datetime(2026, 11, 19, 0, 0, 0, tzinfo=timezone.utc)
 # A refresh can move a rate with no warning (launch night's first refresh
 # took every rate down at once as the tracked players jumped 638 -> 3,868),
 # so no spread may be narrower than this, in logit units.
-JUMP = 0.6
+JUMP = 1.2
 # Model risk grows with the horizon: a trend fitted on days of history and
 # read days ahead can bend. Per square-root day, in logit units.
-RISK_PER_SQRT_DAY = 0.25
+RISK_PER_SQRT_DAY = 0.5
 # Hard floor and cap on the spread, in logit units.
-SPREAD_FLOOR = 0.6
-SPREAD_CAP = 2.5
+SPREAD_FLOOR = 1.5
+SPREAD_CAP = 3.0
 # Prior strength, in reads, when a trophy's slope is shrunk toward its
 # tier's median slope.
 SHRINK_READS = 6.0
